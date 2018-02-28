@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/oem/rover_sys/devel/setup.sh
