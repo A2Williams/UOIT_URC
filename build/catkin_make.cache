@@ -1,2 +1,2 @@
-
--DCATKIN_DEVEL_PREFIX=/home/oem/rover_sys/devel -DCMAKE_INSTALL_PREFIX=/home/oem/rover_sys/install -G Unix Makefiles
+rover_controls:rover_tutorials
+-DCATKIN_DEVEL_PREFIX=/home/brayden/UOIT_URC/devel -DCMAKE_INSTALL_PREFIX=/home/brayden/UOIT_URC/install -G Unix Makefiles

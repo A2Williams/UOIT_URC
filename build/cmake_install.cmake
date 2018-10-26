@@ -1,8 +1,8 @@
-# Install script for directory: /home/oem/rover_sys/src
+# Install script for directory: /home/brayden/UOIT_URC/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/oem/rover_sys/install")
+  set(CMAKE_INSTALL_PREFIX "/home/brayden/UOIT_URC/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -44,79 +44,81 @@ endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/oem/rover_sys/install/_setup_util.py")
+   "/home/brayden/UOIT_URC/install/_setup_util.py")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/oem/rover_sys/install" TYPE PROGRAM FILES "/home/oem/rover_sys/build/catkin_generated/installspace/_setup_util.py")
+file(INSTALL DESTINATION "/home/brayden/UOIT_URC/install" TYPE PROGRAM FILES "/home/brayden/UOIT_URC/build/catkin_generated/installspace/_setup_util.py")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/oem/rover_sys/install/env.sh")
+   "/home/brayden/UOIT_URC/install/env.sh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/oem/rover_sys/install" TYPE PROGRAM FILES "/home/oem/rover_sys/build/catkin_generated/installspace/env.sh")
+file(INSTALL DESTINATION "/home/brayden/UOIT_URC/install" TYPE PROGRAM FILES "/home/brayden/UOIT_URC/build/catkin_generated/installspace/env.sh")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/oem/rover_sys/install/setup.bash")
+   "/home/brayden/UOIT_URC/install/setup.bash")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/oem/rover_sys/install" TYPE FILE FILES "/home/oem/rover_sys/build/catkin_generated/installspace/setup.bash")
+file(INSTALL DESTINATION "/home/brayden/UOIT_URC/install" TYPE FILE FILES "/home/brayden/UOIT_URC/build/catkin_generated/installspace/setup.bash")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/oem/rover_sys/install/setup.sh")
+   "/home/brayden/UOIT_URC/install/setup.sh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/oem/rover_sys/install" TYPE FILE FILES "/home/oem/rover_sys/build/catkin_generated/installspace/setup.sh")
+file(INSTALL DESTINATION "/home/brayden/UOIT_URC/install" TYPE FILE FILES "/home/brayden/UOIT_URC/build/catkin_generated/installspace/setup.sh")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/oem/rover_sys/install/setup.zsh")
+   "/home/brayden/UOIT_URC/install/setup.zsh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/oem/rover_sys/install" TYPE FILE FILES "/home/oem/rover_sys/build/catkin_generated/installspace/setup.zsh")
+file(INSTALL DESTINATION "/home/brayden/UOIT_URC/install" TYPE FILE FILES "/home/brayden/UOIT_URC/build/catkin_generated/installspace/setup.zsh")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/oem/rover_sys/install/.rosinstall")
+   "/home/brayden/UOIT_URC/install/.rosinstall")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/oem/rover_sys/install" TYPE FILE FILES "/home/oem/rover_sys/build/catkin_generated/installspace/.rosinstall")
+file(INSTALL DESTINATION "/home/brayden/UOIT_URC/install" TYPE FILE FILES "/home/brayden/UOIT_URC/build/catkin_generated/installspace/.rosinstall")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/oem/rover_sys/build/gtest/cmake_install.cmake")
+  include("/home/brayden/UOIT_URC/build/gtest/cmake_install.cmake")
+  include("/home/brayden/UOIT_URC/build/rover_controls/cmake_install.cmake")
+  include("/home/brayden/UOIT_URC/build/rover_tutorials/cmake_install.cmake")
 
 endif()
 
@@ -128,5 +130,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/oem/rover_sys/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/brayden/UOIT_URC/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

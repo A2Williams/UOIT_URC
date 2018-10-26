@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/oem/rover_sys/src
+CMAKE_SOURCE_DIR = /home/brayden/UOIT_URC/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/oem/rover_sys/build
+CMAKE_BINARY_DIR = /home/brayden/UOIT_URC/build
 
 # Utility rule file for download_extra_data.
 
@@ -67,6 +67,6 @@ CMakeFiles/download_extra_data.dir/clean:
 .PHONY : CMakeFiles/download_extra_data.dir/clean
 
 CMakeFiles/download_extra_data.dir/depend:
-	cd /home/oem/rover_sys/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/oem/rover_sys/src /home/oem/rover_sys/src /home/oem/rover_sys/build /home/oem/rover_sys/build /home/oem/rover_sys/build/CMakeFiles/download_extra_data.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/brayden/UOIT_URC/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/brayden/UOIT_URC/src /home/brayden/UOIT_URC/src /home/brayden/UOIT_URC/build /home/brayden/UOIT_URC/build /home/brayden/UOIT_URC/build/CMakeFiles/download_extra_data.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/download_extra_data.dir/depend
 
