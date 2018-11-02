@@ -1,2 +1,2 @@
-rover_controls:rover_tutorials
--DCATKIN_DEVEL_PREFIX=/home/brayden/UOIT_URC/devel -DCMAKE_INSTALL_PREFIX=/home/brayden/UOIT_URC/install -G Unix Makefiles
+rover_controls:rover_tutorials:zed-ros-wrapper/examples/zed_nodelet_example:zed-ros-wrapper/examples/zed_rtabmap_example:zed-ros-wrapper/tutorials/zed_depth_sub_tutorial:zed-ros-wrapper/tutorials/zed_tracking_sub_tutorial:zed-ros-wrapper/tutorials/zed_video_sub_tutorial:zed-ros-wrapper/zed_display_rviz:zed-ros-wrapper/zed_ros:zed-ros-wrapper/zed_wrapper
+-DCATKIN_DEVEL_PREFIX=/home/nvidia/UOIT_URC/devel -DCMAKE_INSTALL_PREFIX=/home/nvidia/UOIT_URC/install -G Unix Makefiles
