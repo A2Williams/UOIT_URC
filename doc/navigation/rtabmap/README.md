@@ -1,4 +1,4 @@
-#How to launch rtabmap using Zed
+# How to launch rtabmap using Zed
 
 To use the Zed stereo camera for creating a map using rtabmap, enter the following commands to launch the rtabmap node and visualizer:
 
