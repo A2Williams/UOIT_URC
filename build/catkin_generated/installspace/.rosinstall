@@ -1,2 +1,2 @@
 - setup-file:
-    local-name: /home/nvidia/UOIT_URC/install/setup.sh
+    local-name: /home/oem/rover_sys/install/setup.sh

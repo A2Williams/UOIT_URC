@@ -7,8 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/nvidia/UOIT_URC/devel:$CMAKE_PREFIX_PATH"
-export LD_LIBRARY_PATH="/opt/ros/kinetic/lib:/usr/local/cuda-9.0/lib64"
-export PWD="/home/nvidia/UOIT_URC/build"
-export ROSLISP_PACKAGE_DIRECTORIES="/home/nvidia/UOIT_URC/devel/share/common-lisp"
-export ROS_PACKAGE_PATH="/home/nvidia/UOIT_URC/src:$ROS_PACKAGE_PATH"
+export PWD="/home/oem/rover_sys/build"

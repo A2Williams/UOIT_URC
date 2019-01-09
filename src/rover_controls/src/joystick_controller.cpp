@@ -4,32 +4,34 @@
 #include "ros/time.h"
 
 //Includes for each of the message types we will be using
-#include <std_msgs/Float64.h>
+#include <std_msgs/Int16.h>
 #include <sensor_msgs/Joy.h>
-#include <sstream>
 
-//Using the namespace for the useg message classes
-using namespace sensor_msgs;
-using namespace std_msgs;
+#include <cmath>
 
-std_msgs::Float64 left_motor_voltage; //Our motor voltage to be calculated
-std_msgs::Float64 right_motor_voltage;
+std_msgs::Int16 left_drive; //Our motor voltage to be calculated
+std_msgs::Int16 right_drive;
 sensor_msgs::Joy joystick_msg; //our range msg inputted
 
 //This assumes that the max voltage is 23, this was just to get some
 //extra resolution on the float values.
 
-float max_voltage = 23; //23V max voltage
-float velocity_magnitude;
-float velocity_direction;
+float JOY_MAX = 1;
+float VAL_RANGE = 64;
+int MAX_VAL = 256;
+int MID_VAL = 192;
+int MIN_VAL = 128; 
+float joy_x;
+float joy_y;
 float twist_angle;
+
 //This callback pulls values from our subscribed message (range_msg)
 //and assigns it to a local variable encoder_pos
 void joy_callback(const sensor_msgs::Joy &joystick_msg)
 {
-	velocity_magnitude = joystick_msg.axes[2];
-  velocity_direction = joystick_msg.axes[1];
-  twist_angle = joystick_msg.axes[3];
+  joy_x = joystick_msg.axes[1];
+  joy_y = joystick_msg.axes[0];
+  twist_angle = joystick_msg.axes[2];
 }
 
 
@@ -43,13 +45,13 @@ int main(int argc, char **argv)
   ros::NodeHandle nh;
 
   //Set up publisher and Subscriber
-  //Publish to topic "motor_voltage"
+  //Publish to topic "drive"
   //Subscribe to topic "joy"
-  ros::Publisher left_motor_pub = nh.advertise<std_msgs::Float64>("left_motor_voltage", 500);
-  ros::Publisher right_motor_pub = nh.advertise<std_msgs::Float64>("right_motor_voltage", 500);
-  ros::Subscriber joy_sub = nh.subscribe("joy", 500, joy_callback);
+  ros::Publisher left_drive_pub = nh.advertise<std_msgs::Int16>("left_drive", 10);
+  ros::Publisher right_drive_pub = nh.advertise<std_msgs::Int16>("right_drive", 10);
+  ros::Subscriber joy_sub = nh.subscribe("joy", 10, joy_callback);
   //Determine publish and subscribe rate
-  ros::Rate loop_rate(500);
+  ros::Rate loop_rate(10);
 
   ROS_INFO("Joystick Controller Node Initialized, Drive Safe!");
   //while node active (terminal active)
@@ -57,17 +59,38 @@ int main(int argc, char **argv)
   {
 
     //Some kind of differential drive steering
-    if(velocity_magnitude == 0) {
-      left_motor_voltage.data = 0;
-      right_motor_voltage.data = 0;
+    if(joy_x == 0) {
+      left_drive.data = 0;
+      right_drive.data = 0;
     }
     else {
-      left_motor_voltage.data = (velocity_direction*(velocity_magnitude*max_voltage))-0.2*(twist_angle*max_voltage);
-      right_motor_voltage.data = (velocity_direction*(velocity_magnitude*max_voltage))+0.2*(twist_angle*max_voltage);
+      // TODO: Send mapped integer values
+      int x_joy_pos = (joy_x  * VAL_RANGE);
+      int y_joy_pos = (-joy_y  * VAL_RANGE);
+
+
+      int left_val = MID_VAL + x_joy_pos + y_joy_pos; 
+      int right_val = MID_VAL - (x_joy_pos + y_joy_pos);
+
+      if (left_val > MAX_VAL) {
+        left_val = MAX_VAL;
+      }
+      if (left_val < MIN_VAL) {
+        left_val = MIN_VAL;
+      }
+      if (right_val > MAX_VAL) {
+        right_val = MAX_VAL;
+      }
+      if (right_val < MIN_VAL) {
+        right_val = MIN_VAL;
+      }
+
+      left_drive.data = left_val;
+      right_drive.data = right_val;
     }
 
-	  left_motor_pub.publish(left_motor_voltage);
-    right_motor_pub.publish(right_motor_voltage);
+	  left_drive_pub.publish(left_drive);
+    right_drive_pub.publish(right_drive);
 
     //
     ros::spinOnce();
