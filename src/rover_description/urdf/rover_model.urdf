@@ -1,0 +1,85 @@
+<?xml version="1.0" ?>
+<robot name="testbot">
+
+<!--materials defined below -->
+<material name="black">
+<color rgba="0.0 0.0 0.0 1.0"/>
+</material>
+
+<material name="orange">
+<color rgba="1.0 0.4 0.0 1.0"/>
+</material>
+
+<material name="white">
+<color rgba="1.0 1.0 1.0 1.0"/>
+</material>
+
+<link name="base_link">
+    <visual>
+        <geometry>
+            <box size="0.46 0.43 0.19"/>
+            <origin xyz = "0 0 0.1"/>
+        </geometry>
+        <material name="orange">
+            <color rgba="0 1 0 1"/>
+        </material>
+    </visual>
+
+    <collision>
+        <geometry>
+            <box size="0.46 0.43 0.19"/>
+            <origin xyz = "0 0 0.1"/>
+        </geometry>
+    </collision>
+</link>
+
+<link name="bogie_left">
+    <visual>
+        <origin xyz="0 0.255 -0.1" rpy="0 0 0"/>
+        <geometry>
+            <box size="1.09 0.08 0.29"/>
+        </geometry>
+        <material name="white"/>
+    </visual>
+    <collision>
+        <origin xyz="0 0.255 -0.1" rpy="0 0 0"/>
+        <geometry>
+            <box size="1.09 0.08 0.29"/>
+        </geometry>
+    </collision>
+</link>
+
+<joint name="base_link_to_left_bogie" type="fixed">
+    <parent link="base_link"/>
+    <child link="bogie_left"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+</joint>
+
+
+<link name="bogie_right">
+    <visual>
+        <origin xyz="0 -0.255 -0.1" rpy="0 0 0"/>
+        <geometry>
+            <box size="1.09 0.08 0.29"/>
+        </geometry>
+        <material name="white"/>
+    </visual>
+    <collision>
+        <origin xyz="0 -0.255 -0.10" rpy="0 0 0"/>
+        <geometry>
+            <box size="1.09 0.08 0.29"/>
+        </geometry>
+    </collision>
+</link>
+
+<joint name="base_link_to_right_bogie" type="fixed">
+    <parent link="base_link"/>
+    <child link="bogie_right"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+</joint>
+
+
+
+</robot>

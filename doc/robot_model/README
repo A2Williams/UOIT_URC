@@ -1,0 +1,11 @@
+Author: Abhi Patel
+Date:02/03/19
+Email: abhi.patel@uoit.net 
+
+Usage:
+roslaunch rover_description rover.launch
+
+Notes:
+- Add proper inertial values
+- Clean up urdf with xacro
+
