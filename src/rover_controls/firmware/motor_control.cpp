@@ -9,6 +9,9 @@
 #include <ros.h>
 #include <std_msgs/Int16.h>
 
+// motors range from [1,6]
+// left motors are numbered odd
+// right motors are numbered even
 
 Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver();
 
@@ -17,17 +20,27 @@ ros::NodeHandle nh;
 // callback messages for left and right side of the drive
 void lDrive_cb(const std_msgs::Int16& cmd_msg) {
   if (cmd_msg.data == 0 || cmd_msg.data == 192) {
-    pwm.setPWM(0,0,0);
+    pwm.setPWM(1,0,0);
+    pwm.setPWM(3,0,0);
+    pwm.setPWM(5,0,0);
   }
   else {
-    pwm.setPWM(0,0,cmd_msg.data);
+    pwm.setPWM(1,0,cmd_msg.data);
+    pwm.setPWM(3,0,cmd_msg.data);
+    pwm.setPWM(5,0,cmd_msg.data);
   }
 }
 
 void rDrive_cb(const std_msgs::Int16& cmd_msg) {
   if (cmd_msg.data == 0 || cmd_msg.data == 192) {
+    pwm.setPWM(2,0,0);
+    pwm.setPWM(4,0,0);
+    pwm.setPWM(6,0,0);
   }
   else {
+    pwm.setPWM(2,0,cmd_msg.data);
+    pwm.setPWM(4,0,cmd_msg.data);
+    pwm.setPWM(6,0,cmd_msg.data);
   }
 }
 
