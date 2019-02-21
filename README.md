@@ -34,13 +34,3 @@ source devel/setup.bash
 ```
 
 Now we have our compiled workspace and should be able to run the rover's systems on our personal devices. 
-
-To upload to the Motor control Node run:
-```
-catkin_make rover_controls_firmware_driver-upload
-```
-to run the Motor control Node you must run:
-```
-rosrun rosserial_python serial_node.py /dev/ttyACM0
-```
-the last parameter `/dev/ttyACM0` is the USB port the Arduino is connected to and my not be the same on your system.
