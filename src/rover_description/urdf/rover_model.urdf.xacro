@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="rover">
+    
+   <!--Base Link-->
+    <link name="base_link">
+        <visual>
+            <geometry>
+                <box size=".63 1.29 .505" />
+            </geometry>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <material name="orange">
+                <color rgba="0.913 0.443 0.086 1" />
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <box size=".63 1.29 .505" />
+            </geometry>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+        </collision>
+        <inertial>
+            <mass value="1.0"/>
+            <inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+
+   </link>
+   
+       
+    <!--Wheel Macro-->
+    <xacro:macro name="wheel" params="prefix reflectx offsety">
+        <link name="${prefix}_wheel">
+            <visual>
+            <geometry>
+                <cylinder length="0.13" radius="0.125" />
+            </geometry>
+            <origin xyz="${reflectx*0.5} 0 0" rpy="0 1.55 0" />
+            <material name="black">
+               <color rgba="0 0 0 1" />
+            </material>
+         </visual>
+        <collision>
+            <geometry>
+                <cylinder length="0.13" radius="0.125" />
+            </geometry>
+            <origin xyz="${reflectx*0.5} 0 0" rpy="0 1.55 0" />
+        </collision>
+        <inertial>
+            <mass value="0.1"/>
+            <inertia ixx="5.1458e-5" iyy="5.1458e-5" izz="6.125e-5" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        </link>
+
+        <joint name="base_to_${prefix}_wheel" type="continuous">
+            <parent link="base_link" />
+            <child link="${prefix}_wheel" />
+            <origin xyz="0 ${offsety} -0.25" />
+            <axis xyz="1 0 0" />
+        </joint>
+   </xacro:macro>
+   
+   <xacro:wheel prefix="R1" reflectx="1" offsety="0.52" />
+   <xacro:wheel prefix="R2" reflectx="1" offsety="0" />
+   <xacro:wheel prefix="R3" reflectx="1" offsety="-0.52" />
+   <xacro:wheel prefix="L1" reflectx="-1" offsety="0.52" />
+   <xacro:wheel prefix="L2" reflectx="-1" offsety="0" />
+   <xacro:wheel prefix="L3" reflectx="-1" offsety="-0.52" />
+   
+   
+   <!--Lidar Supprt Rod-->
+   <link name="lidar_support_rod">
+        <visual>
+            <geometry>
+                <cylinder length="0.34" radius="0.035" />
+            </geometry>
+            <origin xyz="0 0.61 0.4225" />
+            <material name="black">
+                <color rgba="0 0 0 1" />
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <cylinder length="0.34" radius="0.035" />
+            </geometry>
+            <origin xyz="0 0.61 0.4225" />
+        </collision>
+        <inertial>
+            <mass value="1.0"/>
+            <inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+
+   </link>
+   
+   <joint name="base_to_lidar_support_rod" type="fixed">
+      <parent link="base_link" />
+      <child link="lidar_support_rod" />
+   </joint>
+    
+   
+   
+   
+</robot>

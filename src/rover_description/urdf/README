@@ -1,0 +1,4 @@
+ To generate a urdf from the xacro
+ rosrun xacro xacro --inorder -o generated_model.urdf rover_model.urdf.xacro
+ 
+ Use ctrl-c and ctrl-z to exit gazebo
