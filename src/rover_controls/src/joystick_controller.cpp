@@ -21,6 +21,7 @@ float VAL_RANGE = 64;
 int MAX_VAL = 256;
 int MID_VAL = 192;
 int MIN_VAL = 128; 
+int breakOn;
 float joy_x;
 float joy_y;
 float twist_angle;
@@ -29,9 +30,10 @@ float twist_angle;
 //and assigns it to a local variable encoder_pos
 void joy_callback(const sensor_msgs::Joy &joystick_msg)
 {
-  joy_x = joystick_msg.axes[1];
-  joy_y = joystick_msg.axes[0];
+  joy_x = joystick_msg.axes[0];
+  joy_y = joystick_msg.axes[3];
   twist_angle = joystick_msg.axes[2];
+  breakOn = joystick_msg.buttons[3];
 }
 
 
@@ -59,17 +61,16 @@ int main(int argc, char **argv)
   {
 
     //Some kind of differential drive steering
-    if(joy_x == 0) {
+    if(breakOn != 1) {
       left_drive.data = 0;
       right_drive.data = 0;
     }
     else {
-      // TODO: Send mapped integer values
       int x_joy_pos = (joy_x  * VAL_RANGE);
       int y_joy_pos = (-joy_y  * VAL_RANGE);
 
 
-      int left_val = MID_VAL + x_joy_pos + y_joy_pos; 
+      int left_val = MID_VAL + (x_joy_pos + y_joy_pos); 
       int right_val = MID_VAL - (x_joy_pos + y_joy_pos);
 
       if (left_val > MAX_VAL) {
