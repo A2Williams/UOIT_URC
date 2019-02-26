@@ -1,5 +1,4 @@
 <launch>
-<<<<<<< HEAD
       <arg name="rover" />
       <arg name="gui" default="False" />
       
@@ -9,28 +8,13 @@
       <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" ></node>
       <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
       <node name="rviz" pkg="rviz" type="rviz" args="-d $(find rover_description)/rviz/rover_model.rviz" />
-      
+      <!--<node name="base2laser" pkg="tf" type="static_transform_publisher" args="0.07 0 0 0 0 0 1 /base_link/laser 50"/> -->
+     
       <!-- Start Gazebo with an empty world -->
-     <include file="$(find gazebo_ros)/launch/empty_world.launch"/>
+      <include file="$(find gazebo_ros)/launch/empty_world.launch"/>
      
     <!-- Spawn Rover in Gazebo, taking the description from the parameter server -->
-    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model generated_model.urdf" />
-      
+    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model rover_model.urdf.xacro" />
+     
+    
 </launch>
-=======
-
-<arg name="model" default="$(find rover_description)/urdf/rover_model.urdf" />
-<arg name="gui" default="True" />
-<arg name="rvizconfig" default="$(find urdf_tutorial)/rviz/urdf.rviz" />
-
-<param name="robot_description" textfile="$(arg model)" />
-<param name="use_gui" value="$(arg gui)"/>
-
-<node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher"/>
-<node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
-<node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" />
-
-<!--<include file="$(find gazebo_ros)/launch/empty_world.launch"/> -->
-
-</launch>
->>>>>>> 59e21045cc373a035e37351fa52cdf83c1db81ae

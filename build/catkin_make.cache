@@ -1,2 +1,2 @@
-rover_controls:rover_description:rover_tutorials
+rover_controls:rover_description:rover_tutorials:rplidar_ros
 -DCATKIN_DEVEL_PREFIX=/home/abhi/UOIT_URC/devel -DCMAKE_INSTALL_PREFIX=/home/abhi/UOIT_URC/install -G Unix Makefiles

@@ -7,4 +7,5 @@
 subdirs(gtest)
 subdirs(rover_controls)
 subdirs(rover_tutorials)
+subdirs(rplidar_ros)
 subdirs(rover_description)

@@ -763,6 +763,32 @@ pid_controller/fast:
 	$(MAKE) -f rover_tutorials/CMakeFiles/pid_controller.dir/build.make rover_tutorials/CMakeFiles/pid_controller.dir/build
 .PHONY : pid_controller/fast
 
+#=============================================================================
+# Target rules for targets named rplidarNode
+
+# Build rule for target.
+rplidarNode: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 rplidarNode
+.PHONY : rplidarNode
+
+# fast build rule for target.
+rplidarNode/fast:
+	$(MAKE) -f rplidar_ros/CMakeFiles/rplidarNode.dir/build.make rplidar_ros/CMakeFiles/rplidarNode.dir/build
+.PHONY : rplidarNode/fast
+
+#=============================================================================
+# Target rules for targets named rplidarNodeClient
+
+# Build rule for target.
+rplidarNodeClient: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 rplidarNodeClient
+.PHONY : rplidarNodeClient
+
+# fast build rule for target.
+rplidarNodeClient/fast:
+	$(MAKE) -f rplidar_ros/CMakeFiles/rplidarNodeClient.dir/build.make rplidar_ros/CMakeFiles/rplidarNodeClient.dir/build
+.PHONY : rplidarNodeClient/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -822,6 +848,8 @@ help:
 	@echo "... actionlib_msgs_generate_messages_py"
 	@echo "... nav_msgs_generate_messages_py"
 	@echo "... pid_controller"
+	@echo "... rplidarNode"
+	@echo "... rplidarNodeClient"
 .PHONY : help
 
 

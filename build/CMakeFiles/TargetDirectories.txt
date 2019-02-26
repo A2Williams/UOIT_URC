@@ -79,6 +79,15 @@
 /home/abhi/UOIT_URC/build/rover_tutorials/CMakeFiles/install/strip.dir
 /home/abhi/UOIT_URC/build/rover_tutorials/CMakeFiles/install/local.dir
 /home/abhi/UOIT_URC/build/rover_tutorials/CMakeFiles/test.dir
+/home/abhi/UOIT_URC/build/rplidar_ros/CMakeFiles/list_install_components.dir
+/home/abhi/UOIT_URC/build/rplidar_ros/CMakeFiles/install.dir
+/home/abhi/UOIT_URC/build/rplidar_ros/CMakeFiles/rebuild_cache.dir
+/home/abhi/UOIT_URC/build/rplidar_ros/CMakeFiles/edit_cache.dir
+/home/abhi/UOIT_URC/build/rplidar_ros/CMakeFiles/test.dir
+/home/abhi/UOIT_URC/build/rplidar_ros/CMakeFiles/rplidarNode.dir
+/home/abhi/UOIT_URC/build/rplidar_ros/CMakeFiles/rplidarNodeClient.dir
+/home/abhi/UOIT_URC/build/rplidar_ros/CMakeFiles/install/local.dir
+/home/abhi/UOIT_URC/build/rplidar_ros/CMakeFiles/install/strip.dir
 /home/abhi/UOIT_URC/build/rover_description/CMakeFiles/list_install_components.dir
 /home/abhi/UOIT_URC/build/rover_description/CMakeFiles/install.dir
 /home/abhi/UOIT_URC/build/rover_description/CMakeFiles/rebuild_cache.dir

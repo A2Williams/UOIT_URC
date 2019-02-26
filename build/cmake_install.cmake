@@ -119,6 +119,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/abhi/UOIT_URC/build/gtest/cmake_install.cmake")
   include("/home/abhi/UOIT_URC/build/rover_controls/cmake_install.cmake")
   include("/home/abhi/UOIT_URC/build/rover_tutorials/cmake_install.cmake")
+  include("/home/abhi/UOIT_URC/build/rplidar_ros/cmake_install.cmake")
   include("/home/abhi/UOIT_URC/build/rover_description/cmake_install.cmake")
 
 endif()

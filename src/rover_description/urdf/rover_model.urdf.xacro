@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="rover">
     
    <!--Base Link-->
@@ -22,10 +23,37 @@
             <mass value="1.0"/>
             <inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0"/>
         </inertial>
-
    </link>
    
-       
+   <!--Lidar Macro-->   
+    <xacro:macro name="sensor_rplidar" params="parent_link">       
+    <link name="base_laser_link">
+        <visual>
+            <geometry>
+                <box size="0.05 0.05 0.05"/>
+            </geometry>
+            <material name="orange">
+                <color rgba="0.913 0.443 0.086 1" />
+            </material>
+        </visual>
+        <inertial>
+            <mass value="0.000001"/>
+            <origin xyz="0 0 0.5"/>
+            <inertia ixx ="0.0001" ixy="0.0" ixz="0.0" iyy="0.0001" iyz="0.0" izz="0.0001"/>
+        </inertial>
+    </link>
+   
+    <joint name="laser" type="fixed">
+        <origin xyz="0 0.61 0.6175" rpy="0.0 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="${parent_link}"/>
+    </joint>
+    </xacro:macro>
+    
+    <!--Spawn Lidar-->
+    <xacro:sensor_rplidar parent_link="base_link"/>
+
+    
     <!--Wheel Macro-->
     <xacro:macro name="wheel" params="prefix reflectx offsety">
         <link name="${prefix}_wheel">
@@ -58,6 +86,7 @@
         </joint>
    </xacro:macro>
    
+   <!--Spawn Wheels-->
    <xacro:wheel prefix="R1" reflectx="1" offsety="0.52" />
    <xacro:wheel prefix="R2" reflectx="1" offsety="0" />
    <xacro:wheel prefix="R3" reflectx="1" offsety="-0.52" />
@@ -96,6 +125,16 @@
    </joint>
     
    
-   
+<gazebo>
+    <plugin name="differential_drive_controller"
+    filename="libgazebo_ros_diff_drive.so">
+    <leftJoint>base_to_R2_wheel</leftJoint>
+    <rightJoint>base_to_L2_wheel</rightJoint>
+    <robotBaseFrame>base_link</robotBaseFrame>
+    <wheelSeparation>0.63</wheelSeparation>
+    <wheelDiameter>0.25</wheelDiameter>
+    <publishWheelJointState>true</publishWheelJointState>
+    </plugin>
+</gazebo>
    
 </robot>

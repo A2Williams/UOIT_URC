@@ -19,6 +19,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "rover_description/catkin_generated/package.cmake"
   "rover_tutorials/catkin_generated/ordered_paths.cmake"
   "rover_tutorials/catkin_generated/package.cmake"
+  "rplidar_ros/catkin_generated/ordered_paths.cmake"
+  "rplidar_ros/catkin_generated/package.cmake"
   "/home/abhi/UOIT_URC/src/CMakeLists.txt"
   "/home/abhi/UOIT_URC/src/rover_controls/CMakeLists.txt"
   "/home/abhi/UOIT_URC/src/rover_controls/package.xml"
@@ -26,6 +28,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/home/abhi/UOIT_URC/src/rover_description/package.xml"
   "/home/abhi/UOIT_URC/src/rover_tutorials/CMakeLists.txt"
   "/home/abhi/UOIT_URC/src/rover_tutorials/package.xml"
+  "/home/abhi/UOIT_URC/src/rplidar_ros/CMakeLists.txt"
+  "/home/abhi/UOIT_URC/src/rplidar_ros/package.xml"
   "/opt/ros/kinetic/share/actionlib_msgs/cmake/actionlib_msgs-extras.cmake"
   "/opt/ros/kinetic/share/actionlib_msgs/cmake/actionlib_msgs-msg-extras.cmake"
   "/opt/ros/kinetic/share/actionlib_msgs/cmake/actionlib_msgsConfig-version.cmake"
@@ -198,6 +202,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "gtest/gtest/CMakeFiles/CMakeDirectoryInformation.cmake"
   "rover_controls/CMakeFiles/CMakeDirectoryInformation.cmake"
   "rover_tutorials/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "rplidar_ros/CMakeFiles/CMakeDirectoryInformation.cmake"
   "rover_description/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
@@ -249,4 +254,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "rover_controls/CMakeFiles/actionlib_msgs_generate_messages_py.dir/DependInfo.cmake"
   "rover_controls/CMakeFiles/nav_msgs_generate_messages_py.dir/DependInfo.cmake"
   "rover_tutorials/CMakeFiles/pid_controller.dir/DependInfo.cmake"
+  "rplidar_ros/CMakeFiles/rplidarNode.dir/DependInfo.cmake"
+  "rplidar_ros/CMakeFiles/rplidarNodeClient.dir/DependInfo.cmake"
   )
