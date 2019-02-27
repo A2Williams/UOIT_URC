@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/oem/rover_sys/src
+CMAKE_SOURCE_DIR = /home/nvidia/UOIT_URC/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/oem/rover_sys/build
+CMAKE_BINARY_DIR = /home/nvidia/UOIT_URC/build
 
 # Utility rule file for tests.
 
@@ -67,6 +67,6 @@ CMakeFiles/tests.dir/clean:
 .PHONY : CMakeFiles/tests.dir/clean
 
 CMakeFiles/tests.dir/depend:
-	cd /home/oem/rover_sys/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/oem/rover_sys/src /home/oem/rover_sys/src /home/oem/rover_sys/build /home/oem/rover_sys/build /home/oem/rover_sys/build/CMakeFiles/tests.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/nvidia/UOIT_URC/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/nvidia/UOIT_URC/src /home/nvidia/UOIT_URC/src /home/nvidia/UOIT_URC/build /home/nvidia/UOIT_URC/build /home/nvidia/UOIT_URC/build/CMakeFiles/tests.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/tests.dir/depend
 

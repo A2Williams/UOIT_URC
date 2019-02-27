@@ -29,6 +29,8 @@ from std_msgs.msg import String
 from std_msgs.msg import Int16
 from sensor_msgs.msg import Joy
 global msg
+global Joy_msg
+Joy_msg = Joy();
 
 def hexint(b):
     return int(binascii.hexlify(b),16)
@@ -46,32 +48,41 @@ def main():
     device.open()
     msg = 0
     hex_0x = '0x'
-
+    print("Here1")
     while not rospy.is_shutdown():
         def data_receive_callback(xbee_message):
             #l_drive = xbee_message.data.decode()
             imcoming = xbee_message.data.decode()
+	    print("Here2")
+	    print(imcoming)
+	    print("here2")
 
             ####### if data is a set of 32 numbers:::
-            vel_mag_str = str(imcoming[0:7])
-            x_direc_str = str(imcoming[8:15])
-            y_direc_str = str(imcoming[16:23])
-            checksum_str = str(imcoming[24:31])
-
+            vel_mag_str = str(imcoming[0:8])
+            x_direc_str = str(imcoming[8:16])
+            y_direc_str = str(imcoming[16:24])
+            checksum_str = str(imcoming[24:32])
+	    print(vel_mag_str)
             #The following converts values back to floats
             vel_mag = struct.unpack('!f',vel_mag_str.decode('hex'))[0]
             x_direc = struct.unpack('!f',x_direc_str.decode('hex'))[0]
             y_direc = struct.unpack('!f',y_direc_str.decode('hex'))[0]
-
+	    checksum_str = struct.unpack('!f',checksum_str.decode('hex'))[0]
+	    print(vel_mag)
             #Now we will check to ensure our packet was sent correctly
             check = float_to_hex(vel_mag + x_direc + y_direc)
             if str(check) == checksum_str:
+	        print("Here5")
                 Joy_msg.axes[3] = vel_mag
                 Joy_msg.axes[1] = y_direc
                 Joy_msg.axes[0] = x_direc
                 pub.publish(Joy_msg)
             else:
                 print('Checksum does not add up.')
+		Joy_msg.axes[3] = vel_mag
+                Joy_msg.axes[1] = y_direc
+                Joy_msg.axes[0] = x_direc
+                pub.publish(Joy_msg)
             #msg = hexint(l_drive)
             #print(msg)
             #pub.publish(Int16(msg))
