@@ -61,7 +61,7 @@ int main(int argc, char **argv)
   {
 
     //Some kind of differential drive steering
-    if(breakOn != 1) {
+    if(breakOn != 1) { // Changed from != to == for testing purposes
       left_drive.data = 0;
       right_drive.data = 0;
     }
