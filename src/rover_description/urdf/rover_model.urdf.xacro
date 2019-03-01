@@ -21,12 +21,14 @@
         </collision>
         <inertial>
             <mass value="1.0"/>
-            <inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0"/>
+            <inertia ixx="0.159927083333" ixy="0" ixz="0" iyy="0.0543270833333" iyz="0" izz="0.17175" />
+            <!--<inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0"/>-->
         </inertial>
    </link>
    
    <!--Lidar Macro-->   
-    <xacro:macro name="sensor_rplidar" params="parent_link">       
+   <!-- 
+   <xacro:macro name="sensor_rplidar" params="parent_link">       
     <link name="base_laser_link">
         <visual>
             <geometry>
@@ -49,9 +51,9 @@
         <child link="${parent_link}"/>
     </joint>
     </xacro:macro>
-    
+   -->
     <!--Spawn Lidar-->
-    <xacro:sensor_rplidar parent_link="base_link"/>
+    <!--<xacro:sensor_rplidar parent_link="base_link"/>-->
 
     
     <!--Wheel Macro-->
@@ -74,7 +76,7 @@
         </collision>
         <inertial>
             <mass value="0.1"/>
-            <inertia ixx="5.1458e-5" iyy="5.1458e-5" izz="6.125e-5" ixy="0" ixz="0" iyz="0"/>
+            <inertia ixx="0.00078125" ixy="0" ixz="0" iyy="0.000531458333333" iyz="0" izz="0.000531458333333" />
         </inertial>
         </link>
 
@@ -112,10 +114,6 @@
             </geometry>
             <origin xyz="0 0.61 0.4225" />
         </collision>
-        <inertial>
-            <mass value="1.0"/>
-            <inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0"/>
-        </inertial>
 
    </link>
    

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/abhi/UOIT_URC/src
+CMAKE_SOURCE_DIR = /home/oem/rover_sys/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/abhi/UOIT_URC/build
+CMAKE_BINARY_DIR = /home/oem/rover_sys/build
 
 # Utility rule file for doxygen.
 
@@ -67,6 +67,6 @@ CMakeFiles/doxygen.dir/clean:
 .PHONY : CMakeFiles/doxygen.dir/clean
 
 CMakeFiles/doxygen.dir/depend:
-	cd /home/abhi/UOIT_URC/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/abhi/UOIT_URC/src /home/abhi/UOIT_URC/src /home/abhi/UOIT_URC/build /home/abhi/UOIT_URC/build /home/abhi/UOIT_URC/build/CMakeFiles/doxygen.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/oem/rover_sys/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/oem/rover_sys/src /home/oem/rover_sys/src /home/oem/rover_sys/build /home/oem/rover_sys/build /home/oem/rover_sys/build/CMakeFiles/doxygen.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/doxygen.dir/depend
 
