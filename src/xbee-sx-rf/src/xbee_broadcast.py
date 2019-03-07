@@ -39,12 +39,21 @@ VELOCITY_DATA = '00000000000000000000000000000000'
 
 def callback(data):
     global VELOCITY_DATA
-    vel_mag = float_to_hex(data.axes[3]) #Velocity magnitude
-    x_direc = float_to_hex(data.axes[0]) #X_direction
-    y_direc = float_to_hex(data.axes[1]) #Y direction
-    print(x_direc)
-    print(x_direc[2:])
-    #print("\n")
+
+    vel_mag = float_to_hex(data.axes[3]) #Velocity magnitude (Rocker)
+    x_direc = float_to_hex(data.axes[0]) #X_direction (Right Joy L/R)
+    y_direc = float_to_hex(data.axes[1]) #Y direction (right Joy F/B)
+	
+    #Currently Unused joystick operations::
+    extra_1 = float_to_hex(data.axes[2]) #Extra data for joy
+    extra_2 = float_to_hex(data.axes[4]) #Extra data for joy
+
+    # Button layout: [0 1 2 3 4 5 6 7] "buttons" is a binary array
+    buttons = [0, 0, 0, 0, 0, 0, 0, 0]
+    butttons[0:8] = data.buttons[0:8] #Grab first 8 buttons from joystick
+    buttons_str = ‘’.join(map(str, buttons))
+    buttons_hex = hex(int(buttons_str,2))	
+    
     checksum = float_to_hex(data.axes[3]+data.axes[0]+data.axes[1])
     VELOCITY_DATA = str(vel_mag[2:])+str(x_direc[2:])+str(y_direc[2:])+str(checksum[2:])
 
@@ -52,7 +61,7 @@ def callback(data):
 def main():
     global VELOCITY_DATA
     print(" +--------------------------------------+")
-    print(" | XBee Python Library Send Data Sample |")
+    print(" |    XBee Python ROS Broadcast Node    |")
     print(" +--------------------------------------+\n")
 
     rospy.init_node('teleop_comms',anonymous=True)
@@ -61,11 +70,11 @@ def main():
     device = XBeeDevice(PORT, BAUD_RATE)
 
     device.open()
-    print("one")
+
     while not rospy.is_shutdown():
-        #print(VELOCITY_DATA)
+        
         device.send_data_broadcast(VELOCITY_DATA)
-        print("Success")
+        
 	rate.sleep() #
     device.close()
 
